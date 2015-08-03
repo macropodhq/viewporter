@@ -1,7 +1,7 @@
 {
   "name": "viewporter",
-  "version": "0.0.0",
-  "description": "Tools for working with browser viewports",
+  "version": "1.0.0",
+  "description": "Tools for working with all sorts of browser viewports",
   "keywords": [
     "viewport",
     "scaling",
