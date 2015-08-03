@@ -1,0 +1,30 @@
+{
+  "name": "viewporter",
+  "version": "0.0.0",
+  "description": "Tools for working with browser viewports",
+  "keywords": [
+    "viewport",
+    "scaling",
+    "position",
+    "mobile"
+  ],
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-core": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "babel-runtime": "^5.4.7",
+    "eslint": "^0.21.2"
+  },
+  "author": "Jessica Stokes <jessica.stokes@macropod.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint --ext .js src/*.js",
+    "prepublish": "babel src --out-dir lib --source-maps inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macropodhq/viewporter.git"
+  },
+  "homepage": "https://github.com/macropodhq/viewporter"
+}
