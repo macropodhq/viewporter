@@ -1,0 +1,37 @@
+$image-width: 200px;
+$image-height: 150px;
+
+.Body {
+  width: 3200px;
+  height: 4230px;
+  background-color: rgba(229,112,231,1);
+  background: linear-gradient(45deg, rgba(229,112,231,1) 0%,rgba(200,94,199,1) 47%,rgba(168,73,163,1) 100%);
+  background-size: 3200px 4230px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.Body,
+.Body * {
+  box-sizing: border-box;
+}
+
+.DemoInfo {
+  padding: 1em;
+  max-width: 100%;
+  width: 100vw;
+}
+
+.Viewporter {
+  position: absolute;
+}
+
+.Image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $image-width;
+  height: $image-height;
+  margin-left: resolve(-($image-width / 2));
+  margin-top: resolve(-($image-height / 2));
+}
