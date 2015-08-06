@@ -19,8 +19,6 @@ function handleViewportChange() {
   const scaleFactor = getMobileScaleFactor();
   const coordinates = getViewportCoordinates();
 
-  console.log(scaleFactor, JSON.stringify(coordinates), JSON.stringify(getBodyOffset()));
-
   viewporter.style.fontSize = `${16 * scaleFactor}px`;
   viewporter.style.top = `${coordinates.top}px`;
   viewporter.style.left = `${coordinates.left}px`;

@@ -2,13 +2,21 @@ $image-width: 200px;
 $image-height: 150px;
 
 .Body {
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
   width: 3200px;
   height: 4230px;
+  color: rgba(240,240,240,1);
   background-color: rgba(229,112,231,1);
   background: linear-gradient(45deg, rgba(229,112,231,1) 0%,rgba(200,94,199,1) 47%,rgba(168,73,163,1) 100%);
   background-size: 3200px 4230px;
   margin: 0;
   font-size: 16px;
+}
+
+.Body a:link,
+.Body a:visited {
+  color: rgba(240,240,240,1);
+  text-decoration: underline;
 }
 
 .Body,
@@ -22,8 +30,13 @@ $image-height: 150px;
   width: 100vw;
 }
 
+.DemoInfo > :first-child {
+  margin-top: 0;
+}
+
 .Viewporter {
   position: absolute;
+  pointer-events: none;
 }
 
 .Image {

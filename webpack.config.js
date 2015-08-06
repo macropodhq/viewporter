@@ -38,7 +38,6 @@ var config = module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        // exclude: /node_modules/,
         loaders: ['babel?experimental&optional=runtime'],
       },
       {
@@ -49,7 +48,7 @@ var config = module.exports = {
           'postcss-loader',
         ],
       },
-      {test: /\.gif$/, loader: 'url-loader'},
+      {test: /\.gif$/, loader: 'file-loader'},
     ],
   },
   postcss: [
