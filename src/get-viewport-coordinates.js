@@ -8,7 +8,7 @@ export default function getViewportCoordinates() {
   return {
     top: window.scrollY - bodyOffset.top,
     left: window.scrollX - bodyOffset.left,
-    width: window.innerWidth,
     height: window.innerHeight,
+    width: window.innerWidth,
   };
 }
