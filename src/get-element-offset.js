@@ -4,8 +4,10 @@ export default function getElementOffset(element) {
 
   return {
     top: Math.round(clientRect.top + window.scrollY),
+    right: Math.round(clientRect.right - window.scrollX),
+    bottom: Math.round(clientRect.bottom - window.scrollY),
     left: Math.round(clientRect.left + window.scrollX),
-    height: Math.round(clientRect.height),
     width: Math.round(clientRect.width),
+    height: Math.round(clientRect.height),
   };
 }

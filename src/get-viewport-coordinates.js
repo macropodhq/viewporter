@@ -7,6 +7,8 @@ export default function getViewportCoordinates() {
 
   return {
     top: window.scrollY - bodyOffset.top,
+    right: bodyOffset.right,
+    bottom: bodyOffset.bottom,
     left: window.scrollX - bodyOffset.left,
     height: window.innerHeight,
     width: window.innerWidth,
