@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<script type="text/javascript" src="/lib/viewporter.js"></script>
+		<style>
+			html {
+				margin: 5px;
+				padding: 4px;
+			}
+
+			body {
+				margin: 8px;
+				padding: 9px;
+				width: 300%;
+				height: 400%;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			var viewportTopLeftElement = document.createElement('div');
+				viewportTopLeftElement.appendChild(document.createTextNode('Top Left'));
+				viewportTopLeftElement.style.backgroundColor = 'rgba(255, 69, 0, 0.4)';
+				viewportTopLeftElement.style.border = '5px solid rgba(255, 69, 0, 0.6)';
+				viewportTopLeftElement.style.boxSizing = 'border-box';
+				viewportTopLeftElement.style.color = 'rgba(255, 69, 0, 0.6)';
+				viewportTopLeftElement.style.fontFamily = 'Akagi, "Helvetica Neue", "Segoe UI", Verdana, sans-serif';
+				viewportTopLeftElement.style.fontSize = '2em';
+				viewportTopLeftElement.style.fontWeight = 'bold';
+				viewportTopLeftElement.style.position = 'absolute';
+				viewportTopLeftElement.style.textAlign = 'center';
+				document.body.appendChild(viewportTopLeftElement);
+
+			var viewportBottomRightElement = document.createElement('div');
+				viewportBottomRightElement.appendChild(document.createTextNode('Bottom Right'));
+				viewportBottomRightElement.style.backgroundColor = 'rgba(0, 255, 189, 0.4)';
+				viewportBottomRightElement.style.border = '5px solid rgba(0, 255, 189, 0.6)';
+				viewportBottomRightElement.style.boxSizing = 'border-box';
+				viewportBottomRightElement.style.color = 'rgba(0, 255, 189, 0.6)';
+				viewportBottomRightElement.style.fontFamily = 'Akagi, "Helvetica Neue", "Segoe UI", Verdana, sans-serif';
+				viewportBottomRightElement.style.fontSize = '2em';
+				viewportBottomRightElement.style.fontWeight = 'bold';
+				viewportBottomRightElement.style.position = 'absolute';
+				viewportBottomRightElement.style.textAlign = 'center';
+				document.body.appendChild(viewportBottomRightElement);
+
+			window.onscroll = window.onresize = function() {
+				viewportTopLeftElement.style.display = viewportBottomRightElement.style.display = 'none';
+
+				var viewportCoords = viewporter.getViewportCoordinates();
+				viewportTopLeftElement.style.top = viewportCoords.top + 'px';
+				viewportTopLeftElement.style.left = viewportCoords.left + 'px';
+
+				viewportBottomRightElement.style.right = viewportCoords.right + 'px';
+				viewportBottomRightElement.style.bottom = viewportCoords.bottom + 'px';
+
+				viewportTopLeftElement.style.width = viewportBottomRightElement.style.width = viewportCoords.width + 'px';
+				viewportTopLeftElement.style.height = viewportBottomRightElement.style.height = viewportCoords.height + 'px';
+				viewportTopLeftElement.style.lineHeight = viewportBottomRightElement.style.lineHeight = viewportCoords.height + 'px';
+
+				viewportTopLeftElement.style.display = viewportBottomRightElement.style.display = 'block';
+			};
+
+			//setInterval(window.onresize, 500);
+
+			window.onresize();
+		</script>
+	</body>
+</html>

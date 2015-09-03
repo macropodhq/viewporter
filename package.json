@@ -36,7 +36,7 @@
     "test": "jest",
     "start": "viewporter-start",
     "lint": "eslint --ext .js src/*.js",
-    "prepublish": "babel src --out-dir lib --ignore __tests__ --source-maps inline"
+    "prepublish": "babel src --out-dir lib --ignore __browser__ --ignore __tests__ --source-maps inline"
   },
   "bin": {
     "viewporter-start": "./bin/start.sh"

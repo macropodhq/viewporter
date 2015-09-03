@@ -1,47 +1,39 @@
 #!/usr/bin/env node
 
-var ecstatic = require('ecstatic');
 var fs = require('fs');
-var http = require('http');
 
 var webdriver = require('selenium-webdriver');
 
-var server = http.createServer(ecstatic({root: __dirname})).listen(function(err) {
-  if (err) {
-    throw err;
+var htmlFiles = fs.readdirSync(__dirname).filter(function(e) {
+  return e.match(/\.html$/);
+});
+
+var port = process.env.PORT || 8080;
+
+var driver = new webdriver.Builder().forBrowser('chrome').build();
+
+(function next() {
+  var htmlFile = htmlFiles.shift();
+  if (!htmlFile) {
+    return driver.quit();
   }
 
-  var port = this.address().port;
+  driver.manage().window().setSize(800,600);
+  driver.get('http://127.0.0.1:' + port + '/' + htmlFile);
 
-  var htmlFiles = fs.readdirSync(__dirname).filter(function(e) {
-    return e.match(/\.html$/);
-  });
+  function passed() {
+    console.log('Test passed!');
+    next();
+  }
 
-  var driver = new webdriver.Builder().forBrowser('chrome').build();
+  function failed() {
+    console.log('Test failed!');
+    next();
+  }
 
-  (function next() {
-    var htmlFile = htmlFiles.shift();
-    if (!htmlFile) {
-      driver.quit();
-      return server.close();
-    }
+  var p = driver.wait(webdriver.until.elementLocated({
+    id: 'test-success',
+  }), 5000);
 
-    driver.get('http://127.0.0.1:' + port + '/' + htmlFile);
-
-    function passed() {
-      console.log('passed!');
-      next();
-    }
-
-    function failed() {
-      console.log('failed!');
-      next();
-    }
-
-    var p = driver.wait(webdriver.until.elementLocated({
-      id: 'test-success',
-    }), 5000);
-
-    p.then(passed, failed);
-  }());
-});
+  p.then(passed, failed);
+}());

@@ -20,9 +20,10 @@ if (release) {
 }
 
 var config = module.exports = {
-  debug: true,
-  cache: true,
-  devtool: true && 'source-map',
+  bail: true,
+  cache: release,
+  debug: !release,
+  devtool: !release && 'source-map',
   entry: {
     'app': './app',
   },

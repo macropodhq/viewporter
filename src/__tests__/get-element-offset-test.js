@@ -22,11 +22,11 @@ describe('getElementOffset', function() {
     });
 
     expect(offset.top).toBe(210);
-    expect(offset.right).toBe(620);
-    expect(offset.left).toBe(42);
-    expect(offset.bottom).toBe(715);
+    expect(offset.right).toBe(619.5);
+    expect(offset.left).toBe(41.5);
+    expect(offset.bottom).toBe(714.640625);
     expect(offset.width).toBe(588);
-    expect(offset.height).toBe(619);
+    expect(offset.height).toBe(618.640625);
   });
 
   it('should return correct coordinates from an element on a mobile browser', function() {
@@ -51,9 +51,9 @@ describe('getElementOffset', function() {
     expect(offset.top).toBe(112);
     expect(offset.right).toBe(347);
     expect(offset.left).toBe(28);
-    expect(offset.bottom).toBe(645);
+    expect(offset.bottom).toBe(645.140625);
     expect(offset.width).toBe(319);
-    expect(offset.height).toBe(609);
+    expect(offset.height).toBe(609.140625);
   });
 
 });
