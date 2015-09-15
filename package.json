@@ -1,6 +1,6 @@
 {
   "name": "viewporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools for working with all sorts of browser viewports",
   "keywords": [
     "viewport",
