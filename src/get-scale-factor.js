@@ -1,9 +1,7 @@
 import getScreenWidth from './get-screen-width';
 
 export default function getScaleFactor() {
-  // `window.outerWidth` is `0` on iOS devices, so we'll use `screenWidth`
-  // instead.
-  const outerWidth = window.outerWidth || getScreenWidth();
+  var outerWidth = Math.min(getScreenWidth(), window.outerWidth || Infinity);
 
   return window.innerWidth / outerWidth;
 }
