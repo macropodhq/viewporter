@@ -2,6 +2,10 @@
 
 Tools for working with all sorts of browser viewports.
 
+## Demo
+
+A simple demo combining `getViewportCoordinates` and `getMobileScaleFactor` is available at <https://macropodhq.github.io/viewporter/>.
+
 ## Tools Included
 
 ### `getBodyOffset`
